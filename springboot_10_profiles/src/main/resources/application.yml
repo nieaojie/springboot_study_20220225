@@ -1,0 +1,14 @@
+#spring:
+#  profiles:
+#    active: dev
+#    include: devMVC,devDB
+#注意加载顺序："devMVC","devDB","dev",后加载dev
+
+
+spring:
+  profiles:
+    active: pro
+    group:
+      "dev": devMVC,devDB
+      "pro": proMVC,proDB
+#注意加载顺序："pro", "proMVC", "proDB",先加载pro

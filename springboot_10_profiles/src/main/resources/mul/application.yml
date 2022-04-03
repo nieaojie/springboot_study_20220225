@@ -1,0 +1,4 @@
+#\u5E94\u7528\u73AF\u5883\uFF0C\u516C\u5171\u914D\u7F6E
+spring:
+  profiles:
+    active: test

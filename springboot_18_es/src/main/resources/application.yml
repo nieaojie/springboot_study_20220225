@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+#  \u4F4E\u7248\u672C
+#  elasticsearch:
+#    uris: http://localhost:9200
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+

@@ -1,0 +1,47 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+  #\u4F1A\u62A5\u5FAA\u73AF\u4F9D\u8D56\u7684\u9519\u8BEF\uFF0C\u7531\u4E8Espringboot\u7684\u7248\u672C\u592A\u9AD8
+  main:
+    allow-circular-references: true
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+
+jetcache:
+  #\u672C\u5730
+  local:
+    default:
+      type: linkedhashmap
+      #\u5F53key\u662F\u4E00\u4E2A\u5BF9\u8C61\u7684\u65F6\u5019\uFF0C\u4E5F\u53EF\u4EE5\u4F5C\u4E3Akey,\u4F46\u9700\u8981\u5C06\u5176\u8F6C\u5316\u4E3A\u5B57\u7B26\u4E32\uFF0C\u53EF\u4EE5\u4F7F\u7528fastjson(jetcache\u4F9D\u8D56\u4E2D\u5DF2\u7ECF\u5305\u542B\u4E86)
+      keyConvertor: fastjson
+
+
+  #\u8FDC\u7A0B
+  remote:
+    default:
+      type: redis
+      host: localhost
+      port: 6379
+      poolConfig:
+        maxTotal: 50
+    #\u9700\u8981\u5728\u8FD9\u4E5F\u5B9A\u4E49\u4E00\u4E2A\u4E0Earea\u5BF9\u5E94\u7684\u503C
+    sms:
+      type: redis
+      host: localhost
+      port: 6379
+      poolConfig:
+        maxTotal: 50

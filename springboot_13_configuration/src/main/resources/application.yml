@@ -1,0 +1,9 @@
+servers:
+  ipAddress: 192.168.0.128
+  port: 8888
+  timeout: -1
+  serverTimeOut: 3
+  dataSize: 1024
+
+datasource:
+  driverClassName: com.mysql.cj.jdbc.Driver123

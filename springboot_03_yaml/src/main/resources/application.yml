@@ -1,0 +1,10 @@
+country: China
+province: henan
+area: zhoukou
+street: xiangcheng
+
+datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/database?serverTimezone=UTC
+  username: root
+  password: root
