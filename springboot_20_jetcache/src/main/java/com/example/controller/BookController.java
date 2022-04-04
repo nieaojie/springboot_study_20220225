@@ -1,8 +1,11 @@
 package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +21,15 @@ public class BookController {
     @GetMapping(value = "/{id}")
     public Book getById(@PathVariable(value = "id") Integer id) {
         return bookService.getById(id);
+    }
+
+    @PutMapping
+    public boolean updateById(@RequestBody Book book) {
+        return bookService.updateById(book);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public boolean deleteById(@PathVariable(value = "id") Integer id) {
+        return bookService.deleteById(id);
     }
 }
