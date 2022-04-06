@@ -75,4 +75,5 @@ public class QuartzConfig {
 }
 ```
 3、执行启动类即可执行任务。
+
 ![](./readme.assets/readme-1649239676539.png)
