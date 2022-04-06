@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YmlApplication {
+public class Springboot21J2cacheApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(YmlApplication.class, args);
+        SpringApplication.run(Springboot21J2cacheApplication.class, args);
     }
 
 }
