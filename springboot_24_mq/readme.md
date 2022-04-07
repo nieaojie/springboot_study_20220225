@@ -1,0 +1,117 @@
+# SpringBoot整合消息队列
+
+## 一、手动模拟消息
+
+> 案例介绍:
+> 模拟创建一个订单之后经过服务调用或处理各种业务之后发送短信。
+
+1、写一个订单接口和短信接口。
+`OrderService.java`
+
+```java
+public interface OrderService {
+    public void order(String id);
+}
+```
+
+`MessageService.java`
+
+```java
+public interface MessageService {
+
+    public void sendMessage(String id);
+
+    public String doMessage();
+}
+```
+
+2、简单实现这两个接口。
+`OrderServiceImpl.java`
+
+```java
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+    @Autowired
+    private MessageService messageService;
+
+    @Override
+    public void order(String id) {
+        //一系列操作，包含各种服务调用，处理各种业务
+        System.out.println("业务订单开始处理");
+        //短信消息处理
+        messageService.sendMessage(id);
+        System.out.println("业务订单处理结束");
+        System.out.println("================================");
+    }
+}
+```
+
+`MessageServiceImpl.java`
+
+```java
+
+@Service
+public class MessageServiceImpl implements MessageService {
+
+    private ArrayList<String> list = new ArrayList<String>();
+
+    @Override
+    public void sendMessage(String id) {
+        System.out.println("待发送短信的订单已纳入消息队列，id:" + id);
+        list.add(id);
+    }
+
+    @Override
+    public String doMessage() {
+        if (list.size() <= 0) {
+            return "无消息可处理";
+        }
+        String remove = list.remove(0);
+        System.out.println("已完成短信发送业务，id:" + remove);
+        return remove;
+    }
+}
+```
+
+3、创建两个controller测试即可。
+`OrderController.java`
+
+```java
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+    @Autowired
+    private OrderService orderService;
+
+    @PostMapping("/{id}")
+    public void order(@PathVariable(value = "id") String id) {
+        orderService.order(id);
+    }
+}
+```
+
+`MessageController.java`
+
+```java
+
+@RestController
+@RequestMapping(value = "/msg")
+public class MessageController {
+
+    @Autowired
+    private MessageService messageService;
+
+    @GetMapping
+    public String doMessage() {
+        return messageService.doMessage();
+    }
+}
+```
+
+4、测试结果
+
+![](./readme.assets/readme-1649344239766.png)
