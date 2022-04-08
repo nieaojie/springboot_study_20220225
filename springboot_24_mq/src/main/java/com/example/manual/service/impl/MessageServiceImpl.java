@@ -1,10 +1,10 @@
-package com.example.service.impl;
+package com.example.manual.service.impl;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
-import com.example.service.MessageService;
+import com.example.manual.service.MessageService;
 
 @Service
 public class MessageServiceImpl implements MessageService {

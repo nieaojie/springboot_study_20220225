@@ -1,21 +1,21 @@
-package com.example.controller;
+package com.example.activemq.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.service.MessageService;
+import com.example.activemq.service.MessageActiveMQService;
 
 @RestController
-@RequestMapping(value = "/msg")
-public class MessageController {
+@RequestMapping(value = "/msgMQ")
+public class MessageActiveMQController {
 
     @Autowired
-    private MessageService messageService;
+    private MessageActiveMQService messageActiveMQService;
 
     @GetMapping
     public String doMessage() {
-        return messageService.doMessage();
+        return messageActiveMQService.doMessage();
     }
 }

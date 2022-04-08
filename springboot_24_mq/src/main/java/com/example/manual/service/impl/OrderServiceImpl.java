@@ -1,10 +1,10 @@
-package com.example.service.impl;
+package com.example.manual.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.service.MessageService;
-import com.example.service.OrderService;
+import com.example.manual.service.MessageService;
+import com.example.manual.service.OrderService;
 
 @Service
 public class OrderServiceImpl implements OrderService {

@@ -1,2 +1,12 @@
 server:
   port: 80
+
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+  jms:
+    template:
+      # 配置一个默认的保存位置
+      default-destination: test
+    # 发布订阅的形式，默认是点对点
+    pub-sub-domain: true

@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.manual.service;
 
 public interface MessageService {
     public void sendMessage(String id);
