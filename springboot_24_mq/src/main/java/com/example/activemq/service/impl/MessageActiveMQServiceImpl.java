@@ -14,13 +14,13 @@ public class MessageActiveMQServiceImpl implements MessageActiveMQService {
 
     @Override
     public void sendMessage(String id) {
-        jmsMessagingTemplate.convertAndSend("order.queue.id",id);
+        jmsMessagingTemplate.convertAndSend("order.queue.id", id);
         System.out.println("待发送短信的订单已纳入消息队列，id:" + id);
     }
 
     @Override
     public String doMessage() {
-        String id = jmsMessagingTemplate.receiveAndConvert("order.queue.id",String.class);
+        String id = jmsMessagingTemplate.receiveAndConvert("order.queue.id", String.class);
         System.out.println("已完成短信发送业务，id:" + id);
         return id;
     }

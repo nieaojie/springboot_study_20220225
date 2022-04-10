@@ -29,8 +29,6 @@ public class Springboot13ConfigurationApplication {
         return dataSource;
     }
 
-
-
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(Springboot13ConfigurationApplication.class,
                                                                    args);

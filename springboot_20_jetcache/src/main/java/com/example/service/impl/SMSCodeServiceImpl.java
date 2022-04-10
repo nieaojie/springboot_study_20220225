@@ -26,7 +26,8 @@ public class SMSCodeServiceImpl implements SMSCodeService {
     //2.使用本地缓存
     //必须指定使用本地缓存cacheType = CacheType.LOCAL，因为当本地缓存和远程缓存同时配置的话，默认启用的是远程缓存
     //default_jetCacheLocal::1593655xxxx
-    @CreateCache(name = "jetCacheLocal::", expire = 30, timeUnit = TimeUnit.SECONDS,cacheType = CacheType.LOCAL)
+    @CreateCache(name = "jetCacheLocal::", expire = 30, timeUnit = TimeUnit.SECONDS,
+            cacheType = CacheType.LOCAL)
     private Cache<String, String> jetCache;
 
     @Override

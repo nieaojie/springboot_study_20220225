@@ -37,7 +37,7 @@ public class SMSCodeServiceImpl implements SMSCodeService {
     public String sendCodeToSMS(String tel) {
         String code = codeUtils.generateCode(tel);
         try {
-            memcachedClient.set(tel, 0, code );
+            memcachedClient.set(tel, 0, code);
         } catch (TimeoutException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

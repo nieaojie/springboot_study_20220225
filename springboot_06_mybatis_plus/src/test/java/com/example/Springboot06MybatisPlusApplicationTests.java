@@ -18,7 +18,8 @@ class Springboot06MybatisPlusApplicationTests {
 
     @Test
     public void getAll() {
-        System.out.println(bookDao.selectList(null));;
+        System.out.println(bookDao.selectList(null));
+        ;
     }
 
 }

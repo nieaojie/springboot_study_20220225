@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitDirectConfig {
     @Bean
-     public Queue directQueue() {
+    public Queue directQueue() {
         // durable:是否持久化,默认true
         // exclusive:是否当前连接专用， 默认false，连接关闭后队列即被删除
         // autoDelete:是否自动删除，默认false， 当生产者或消费者不再使用此队列，自动删除

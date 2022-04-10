@@ -1,7 +1,11 @@
 # j2cache的整合过程
->j2cache整合redis和ehcache
+
+> j2cache整合redis和ehcache
+
 ## 一、导包
+
 > 加注解的表示新需要的依赖，不加注解表示基础环境依赖。
+
 ```xml
 <dependencies>
   <!--ehcache-->
@@ -41,8 +45,11 @@
   </dependency>
 </dependencies>
 ```
+
 ## 二、添加j2cache的配置
-###1、在application.yml文件中配置j2cache的路径。
+
+### 1、在application.yml文件中配置j2cache的路径。
+
 ```yml
 server:
   port: 80
@@ -50,11 +57,14 @@ j2cache:
   config-location: j2cache.properties
 
 ```
-###2、创建j2cache的配置文件
-找到j2cache的核心包 `net.oschina.j2cache:j2cache-core:2.8.4-release` ，里面有配置文件。
-把`j2cache.properties`配置复制到项目的配置路径下（可作为学习使用）。
+
+### 2、创建j2cache的配置文件
+
+找到j2cache的核心包 `net.oschina.j2cache:j2cache-core:2.8.4-release` ，里面有配置文件。 把`j2cache.properties`
+配置复制到项目的配置路径下（可作为学习使用）。
 
 下面是自定义的`j2cache.properties`配置：
+
 ```properties
 # 一级缓存：供应商+配置
 j2cache.L1.provider_class=ehcache
@@ -70,7 +80,9 @@ j2cache.broadcast=net.oschina.j2cache.cache.support.redis.SpringRedisPubSubPolic
 redis.mode=single
 redis.namespace=j2cache #j2cache:smsCode:15936553896
 ```
+
 ehcache的配置：
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -110,6 +122,7 @@ ehcache的配置：
 ```
 
 ## 三、代码中使用
+
 ```java
 @Service
 public class SMSCodeServiceImpl implements SMSCodeService {

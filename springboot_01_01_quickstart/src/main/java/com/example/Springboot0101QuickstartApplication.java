@@ -6,6 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import com.example.controller.BookController;
 import com.example.entity.User;
+
 //该注解有注解@ComponentScan，意味着会扫描该启动类所在包下的所有bean.
 @SpringBootApplication
 public class Springboot0101QuickstartApplication {

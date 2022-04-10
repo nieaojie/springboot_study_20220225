@@ -37,8 +37,7 @@ spring:
 
 3. password为邮箱授权码（非邮箱密码）
 
-    ![](./readme.assets/readme-1649340628639.png)
-
+   ![](./readme.assets/readme-1649340628639.png)
 
 2、先整个实体类`Mail.java`
 

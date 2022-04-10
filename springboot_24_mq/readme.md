@@ -312,6 +312,8 @@ spring:
 
 ## 三、springboot整合RabbitMQ
 
+> [windows下安装RabbitMQ](./Windows安装RabbitMQ.md)
+
 相关知识：
 
 ![JMS](./readme.assets/readme-1649423247464.png)
@@ -692,6 +694,6 @@ public class MessageTopicListener {
 **说明：** 由于发送的消息符合多个绑定规则，所以会进入多个规则所绑定的消息队列中。
 
 **Topic模式绑定规则：**
-![](./readme.assets/readme-1649431606355.png)
+![Topic模式绑定规则](./readme.assets/readme-1649431606355.png)
 
 
