@@ -16,7 +16,14 @@ spring:
     host: localhost
     port: 5672
 
-rocketmq:
-  name-server: localhost:9876
-  producer:
-    group: group_rocketmq
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: group_order
+
+
+#rocketmq:
+#  name-server: localhost:9876
+#  producer:
+#    group: group_rocketmq

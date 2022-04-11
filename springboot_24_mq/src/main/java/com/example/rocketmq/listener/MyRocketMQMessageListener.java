@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
  *               该接口传入的泛型参数为消息队列中的消息的类型。
  *               2)@RocketMQMessageListener必须传入两个参数，topic主题，consumerGroup（配置文件中配置的）
  **/
-@Component
-@RocketMQMessageListener(topic = "order_id", consumerGroup = "group_rocketmq")
+//@Component
+//@RocketMQMessageListener(topic = "order_id", consumerGroup = "group_rocketmq")
 public class MyRocketMQMessageListener implements RocketMQListener<String> {
     @Override
     public void onMessage(String id) {

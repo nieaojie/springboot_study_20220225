@@ -13,7 +13,7 @@ import com.example.rocketmq.service.MessageRocketMQService;
  * @create: 2022-04-11 16:17
  * @description:
  **/
-@Service
+//@Service
 public class MessageServiceRocketMQImpl implements MessageRocketMQService {
 
     @Autowired
