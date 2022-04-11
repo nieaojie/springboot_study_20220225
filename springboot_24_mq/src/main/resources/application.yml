@@ -2,6 +2,7 @@ server:
   port: 80
 
 spring:
+#  如果不使用activemq的话可以先注释掉，或者把activemq的服务启动。
 #  activemq:
 #    broker-url: tcp://localhost:61616
 #  jms:
@@ -14,3 +15,8 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: group_rocketmq
