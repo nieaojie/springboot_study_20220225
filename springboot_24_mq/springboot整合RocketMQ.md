@@ -1,5 +1,7 @@
 # springboot整合RocketMQ
 
+> 环境配置：[Windows下安装RocketMQ](./Windows下安装RocketMQ.md)
+
 ## 一、导依赖
 
 ```xml
